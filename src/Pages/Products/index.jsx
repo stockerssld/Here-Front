@@ -19,7 +19,7 @@ export default function Products() {
     <div>
       <Paper className={classes.root}>
         <Typography variant="h5" component="h3">
-          This is a sheet of paper.
+          Vea nuestros Productos
         </Typography>
         
         <Lista_Cuadricular/>
