@@ -21,7 +21,7 @@ export default function Products() {
         <Typography variant="h5" component="h3">
           Vea nuestros Productos
         </Typography>
-        
+        {/* eslint-disable-next-line */}
         <Lista_Cuadricular/>
       </Paper>
     </div>

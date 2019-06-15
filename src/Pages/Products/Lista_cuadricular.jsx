@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { previewImage } from 'zent';
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
