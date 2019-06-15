@@ -14,6 +14,27 @@ function NoMatch({ location }) {
   }
 
 
+  function Sign_in() {
+    return (
+      <div className="jumbotron align-items-center">
+        <h3>
+          Sign_In
+        </h3>
+      </div>
+    );
+  }
+
+
+  function Sign_up() {
+    return (
+      <div className="jumbotron align-items-center">
+        <h3>
+          Sign_Up
+        </h3>
+      </div>
+    );
+  }
+
 
 export default class Routes extends Component{
    
@@ -31,6 +52,20 @@ export default class Routes extends Component{
   
                 )}/>
             
+                <Route
+                path={"/users/Sign_in"}
+                render={props=> (
+                  <Layout><Sign_in {...props} /></Layout>
+  
+                )}/>
+
+
+                <Route
+                  path={"/users/Sign_up"}
+                  render={props=> (
+                    <Layout><Sign_up {...props} /></Layout>
+    
+                  )}/>
                 <Route render={props=>(
                   <Layout>
                     <NoMatch {...props}/>

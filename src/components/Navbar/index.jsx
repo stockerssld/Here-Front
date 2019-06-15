@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -134,10 +135,14 @@ export default function Navbar_unregistered() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <p>Registrate</p>
+        <Link to='users/Sign_up'>
+          <p>Registrate</p>
+        </Link>
       </MenuItem>
       <MenuItem>
-        <p>Iniciar Sesión</p>
+        <Link to='users/Sign_in'>
+          <p>Iniciar Sesión</p>
+        </Link>
       </MenuItem>
     </Menu>
   );
@@ -147,7 +152,9 @@ export default function Navbar_unregistered() {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
+            <Link to="/">
             Cac-Shop
+            </Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -165,8 +172,16 @@ export default function Navbar_unregistered() {
          
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <MenuItem onClick={handleMenuClose}>Registrate</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Iniciar Sesión</MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link to="/users/Sign_up">
+              Registrate
+            </Link>
+            </MenuItem>
+          <MenuItem onClick={handleMenuClose}>
+            <Link to="/users/Sign_in">
+            Iniciar Sesión
+            </Link>
+            </MenuItem>
       
           </div>
           <div className={classes.sectionMobile}>
