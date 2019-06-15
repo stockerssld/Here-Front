@@ -6,7 +6,6 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import  {Tipo1, Tipo2, Tipo3} from './utils'
 
 
   const useStyles = makeStyles(theme => ({
@@ -26,7 +25,8 @@ import  {Tipo1, Tipo2, Tipo3} from './utils'
     },
   }));
   
-export default function Lista_cuadricular() {
+export default function Lista_cuadricular(props) {
+  console.log(props.Contenido)
 
         const classes = useStyles();
         return (
@@ -37,7 +37,7 @@ export default function Lista_cuadricular() {
                 <ListSubheader component="div"><h3>Cactaceas Seccion 1</h3></ListSubheader>
                 </GridListTile>
                     {
-                        Tipo1.map(tile => (
+                        props.Contenido.map(tile => (
                             <GridListTile key={tile.img}>
                                 <img src={tile.img} alt={tile.title}/>
                             <GridListTileBar
@@ -55,7 +55,7 @@ export default function Lista_cuadricular() {
                 
             </div>
             <br/>
-            <div className={classes.root}>
+            {/* <div className={classes.root}>
                 <GridList cellHeight={280} className={classes.gridList}>
                 <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
                 <ListSubheader component="div"><h3>Cactaceas Seccion 2</h3></ListSubheader>
@@ -99,7 +99,7 @@ export default function Lista_cuadricular() {
                         </GridListTile>
                     ))}
                 </GridList>
-            </div>
+            </div> */}
             </>
 
 
