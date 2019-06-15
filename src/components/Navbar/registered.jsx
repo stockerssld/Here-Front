@@ -116,6 +116,10 @@ export default function Navbar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Cerrar Sesión</MenuItem>
+      
+      
+
     </Menu>
   );
 
@@ -137,7 +141,9 @@ export default function Navbar() {
           </Badge>
         </IconButton>
         <p>Messages</p>
+          
       </MenuItem>
+ 
       <MenuItem>
         <IconButton aria-label="Show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
@@ -156,6 +162,9 @@ export default function Navbar() {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
+      </MenuItem>
+      <MenuItem>
+      <p>Cerrar Sesión</p>
       </MenuItem>
     </Menu>
   );
@@ -188,8 +197,9 @@ export default function Navbar() {
               inputProps={{ 'aria-label': 'Search' }}
             />
           </div>
+         
           <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
+          <div className={classes.sectionDesktop}>
             <IconButton aria-label="Show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
@@ -222,7 +232,6 @@ export default function Navbar() {
               <MoreIcon />
             </IconButton>
           </div>
-          <Button color="inherit">Cerrar Sesión</Button>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

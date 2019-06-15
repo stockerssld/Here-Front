@@ -114,8 +114,11 @@ export default function Navbar_unregistered() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Registrate</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Iniciar Sesión</MenuItem>
+      
+      
+
     </Menu>
   );
 
@@ -131,31 +134,10 @@ export default function Navbar_unregistered() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="Show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        <p>Registrate</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="Show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="Account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+        <p>Iniciar Sesión</p>
       </MenuItem>
     </Menu>
   );
@@ -164,14 +146,6 @@ export default function Navbar_unregistered() {
     <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             Cac-Shop
           </Typography>
@@ -188,29 +162,12 @@ export default function Navbar_unregistered() {
               inputProps={{ 'aria-label': 'Search' }}
             />
           </div>
+         
           <div className={classes.grow} />
-          <Button color="inherit">Registrate</Button>
-          <Button color="inherit">Iniciar Sesión</Button>  {/* <div className={classes.sectionDesktop}>
-            <IconButton aria-label="Show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="Show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="Account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+          <div className={classes.sectionDesktop}>
+          <MenuItem onClick={handleMenuClose}>Registrate</MenuItem>
+          <MenuItem onClick={handleMenuClose}>Iniciar Sesión</MenuItem>
+      
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -219,10 +176,11 @@ export default function Navbar_unregistered() {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div> */}
+          >
+            <MenuIcon />
+          </IconButton>
+         
+          </div>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

@@ -27,9 +27,7 @@ export default class Routes extends Component{
                 exact
                 path={"/"}
                 render={props=> (
-                  <Layout><Products {...props} 
-                  
-                  /></Layout>
+                  <Layout><Products {...props} /></Layout>
   
                 )}/>
             
