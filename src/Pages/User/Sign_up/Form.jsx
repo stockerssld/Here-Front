@@ -37,7 +37,8 @@ class Form_Sign_up extends React.Component {
     axios
         // .post("https://cors-anywhere.herokuapp.com/http://192.168.0.103:3002/registrations", {
         // .post("http://localhost:3002/registrations", {
-        .post("https://here-back.herokuapp.com/registrations", {
+          
+        .post("https://cors-anywhere.herokuapp.com/https://here-back.herokuapp.com/registrations", {
 
           user: {
                 email: values.email,
