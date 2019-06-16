@@ -9,7 +9,8 @@ function Layout(props) {
             <Header
                 {...props}
             />    
-            <Body ruta={props.match.path}>            
+            <Body ruta={props.match.path}>  
+            
             {props.children}
             </Body>
         </div>

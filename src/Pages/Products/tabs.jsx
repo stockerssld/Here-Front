@@ -1,87 +1,71 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import { Tabs } from 'antd';
+import Categorias from './utils'
+import Card from './CardInicio'
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-// import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import  Tipos from './utils'
-import Lista_cuadricular from './Lista_cuadricular';
-
-
-
-import { Tabs, Icon } from 'antd';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const { TabPane } = Tabs;
-
-
-function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
-}
-
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-function LinkTab(props) {
-  return (
-    <Tab
-      component="a"
-      onClick={event => {
-        event.preventDefault();
-      }}
-      {...props}
-    />
-  );
-}
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
 }));
 
-export default function NavTabs() {
+
+
+export default function TabsMenu() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  function handleChange(event, newValue) {
-    setValue(newValue);
-  }
-
   return (
-    <div className={classes.root}>
-      <br/>
-   
- {/* {
-      Tipos.map(tipo=>{
-return (<div>{tipo}</div>)
-      })
-    }
- */}
-  {/* {
-   console.log(Tipos)
-   } */}
+    <>
 
+      <Tabs defaultActiveKey="1" >
+        <TabPane tab="Arboles" key="1">
+          <div className={classes.root}>
 
+            <Grid container spacing={3}>
 
+              {Categorias.Tipo1.map((tipo, index) => {
+                return (<>        <Grid item xs={6} sm={3}>
+                  <Card {...tipo} />      </Grid>
+                </>)
+              })}
+            </Grid>
+          </div>
+        </TabPane>
+        <TabPane tab="Catacias" key="2">
+          <div className={classes.root}>
 
+            <Grid container spacing={3}>
 
+              {Categorias.Tipo2.map((tipo, index) => {
+                return (<>        <Grid item xs={6} sm={3}>
+                  <Card {...tipo} />      </Grid>
+                </>)
+              })}
+            </Grid>
+          </div>
+        </TabPane>
+        <TabPane tab="Flores de jardin" key="3">
+          <div className={classes.root}>
 
+            <Grid container spacing={3}>
 
-
-
-
-
-
-
-    </div>
-  );
+              {Categorias.Tipo3.map((tipo, index) => {
+                return (<>        <Grid item xs={6} sm={3}>
+                  <Card {...tipo} />      </Grid>
+                </>)
+              })}
+            </Grid>
+          </div>
+        </TabPane>
+      </Tabs>
+    </>
+  )
 }
-        
-function Cuerpo(props){return<>Hola{props.children}</>}

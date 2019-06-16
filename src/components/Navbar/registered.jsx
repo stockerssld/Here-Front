@@ -14,7 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import Button from '@material-ui/core/Button';
+
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -117,8 +118,8 @@ export default function Navbar() {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={handleMenuClose}>Cerrar Sesión</MenuItem>
-      
-      
+
+
 
     </Menu>
   );
@@ -134,16 +135,20 @@ export default function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="Show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-          
-      </MenuItem>
- 
+      
+      <Link to="/Chat">
+        <MenuItem>
+
+          <IconButton aria-label="Show 4 new mails" color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <MailIcon />
+            </Badge>
+          </IconButton>
+
+          <p>Messages</p>
+
+        </MenuItem>
+      </Link>
       <MenuItem>
         <IconButton aria-label="Show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
@@ -164,7 +169,7 @@ export default function Navbar() {
         <p>Profile</p>
       </MenuItem>
       <MenuItem>
-      <p>Cerrar Sesión</p>
+        <p>Cerrar Sesión</p>
       </MenuItem>
     </Menu>
   );
@@ -197,14 +202,17 @@ export default function Navbar() {
               inputProps={{ 'aria-label': 'Search' }}
             />
           </div>
-         
+
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+          <Link to="/Chat">
+         
             <IconButton aria-label="Show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
               </Badge>
             </IconButton>
+            </Link>
             <IconButton aria-label="Show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
@@ -232,6 +240,7 @@ export default function Navbar() {
               <MoreIcon />
             </IconButton>
           </div>
+
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

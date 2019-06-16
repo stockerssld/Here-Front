@@ -4,7 +4,9 @@ import Layout from '../Layout'
 import Products from '../Pages/Products';
 import Sign_in from '../Pages/User/Sign_in';
 import Sign_up from '../Pages/User/Sign_up';
+import Chat from './../Pages/Chat'
 import axios from 'axios'
+
 function NoMatch({ location }) {
     return (
       <div className="jumbotron align-items-center">
@@ -41,7 +43,7 @@ export default class Routes extends Component{
 }
 
   checkLoginStatus(){
-    axios.get("http://localhost:3002/logged_in", { withCredentials: true })
+    axios.get("https://cors-anywhere.herokuapp.com/http://192.168.0.103:3002/logged_in", { withCredentials: true })
     .then(response => {
       // console.log("Logged in?", response)
       if(response.data.logged_in && this.state.loggedInStatus==="NOT_LOGGED_IN"){
@@ -125,7 +127,12 @@ export default class Routes extends Component{
                         // handleLogout={this.handleLogout}
                         />
                   )}/>
-                  
+                <Route
+                path={"/Chat"}
+                render={propds=>(
+                  <Chat/>
+                )}
+                  />
                 <Route render={props=>(
                   
                     <NoMatch {...props}

@@ -26,7 +26,7 @@ import InfoIcon from '@material-ui/icons/Info';
   }));
   
 export default function Lista_cuadricular(props) {
-  console.log(props.Contenido)
+//   console.log(props.Contenido)
 
         const classes = useStyles();
         return (

@@ -8,6 +8,7 @@ export default function Body(props){
     return (
 <Fragment>
 <Contenido>
+    {/* {console.log(props.children)} */}
 {props.children}
 
 </Contenido>
