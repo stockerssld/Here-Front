@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Grid from './Grid'
-export default class Chat extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+import React from 'react'
 
-    render() {
-        return (
-            <div>
-            <Grid/>                
-            </div>
-        )
-    }
+import Grid from './Grid'
+
+ 
+
+       
+export default function Chat(match) {
+    return (
+        <div>
+           {/* {console.log((match))} */}
+        <Grid {...match} />                
+        </div>
+    )
 }

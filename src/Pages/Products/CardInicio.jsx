@@ -1,7 +1,7 @@
 import React from 'react'
-import { Card, Button } from 'antd';
+import { Card,  } from 'antd';
 import Modals from './Modal'
-import Swal from 'sweetalert2/dist/sweetalert2.js'
+
 
 
 const { Meta } = Card;

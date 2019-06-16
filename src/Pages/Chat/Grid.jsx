@@ -4,6 +4,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import List from './List'
 import Mensaje from './Mensaje'
+import { Route   } from 'react-router-dom'
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -16,26 +18,33 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function AutoGrid() {
+export default function AutoGrid(props) {
   const classes = useStyles();
 
   return (
+    
     <div className={classes.root}>
+{/* // {console.log(props.match.url)} */}
       <Grid container spacing={2}>
         <Grid item xs={4}>
           <Paper className={classes.paper}>
           
-            <List/>
+            <List {...props}/>
           </Paper>
         </Grid>
         <Grid item xs>
-          <Paper className={classes.paper}>
-          
-          <Mensaje/>
+          <Paper  className={classes.paper}>
+          <strong>{'Mensajes'}</strong><br/>{'Selecciona un usuario'}
+          <Route path={`${props.match.url}/:id`} render={props=> ( <MensajePersona {...props} /> )}/>
           </Paper>
         </Grid>
       </Grid>
-     
+           
+
     </div>
   );
+}
+
+function MensajePersona(props){
+  return(<Mensaje {...props}></Mensaje>)
 }

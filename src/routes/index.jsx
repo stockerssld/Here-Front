@@ -11,6 +11,7 @@ function NoMatch({ location }) {
     return (
       <div className="jumbotron align-items-center">
         <h3>
+          
           Pagina no encontrada <code>{location.pathname}</code>
         </h3>
       </div>
@@ -97,16 +98,8 @@ export default class Routes extends Component{
             <Switch>
                 {/* <Route path={`${match.url}/:id`} component={Categories} /> */}
                 {/* <Route path="/" exact component={Home}/> */}
-                <Route 
-                exact
-                path={"/"}
-                render={props=> (
-                    <Products {...props} 
-                    handleLogin={this.handleLogin}
-                    handleLogout={this.handleLogout}
-                    />
-                )}/>
-            
+                <Route  exact path={"/"} render={props=> ( <Products {...props}  handleLogin={this.handleLogin}         handleLogout={this.handleLogout}/>)}/>
+
                 <Route
                 path={"/users/Sign_in"}
                 render={props=> (
@@ -132,8 +125,8 @@ export default class Routes extends Component{
                   )}/>
                 <Route
                 path={"/Chat"}
-                render={propds=>(
-                  <Chat/>
+                render={props=>(
+                  <Chat {...props}/>
                 )}
                   />
                 <Route render={props=>(

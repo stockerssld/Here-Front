@@ -1,5 +1,5 @@
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
-import React,{Component} from 'react'
+import React from 'react'
 import axios from 'axios'
 class Form_Sign_in extends React.Component {
   constructor(props) {

@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Sign_upF from './Form';
 import { Row, Col } from 'antd';
-import axios from 'axios'
-import { withStyles } from '@material-ui/styles';
 
-
-
-//   const classes = useStyles();
 
 
  class Sign_up extends Component {
