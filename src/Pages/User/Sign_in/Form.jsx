@@ -25,8 +25,8 @@ handleSubmit(e) {
       console.log('Received values of form: ', values);
     
   axios
-      .post("https://here-back.herokuapp.com/sessions", {
-        // .post("http://localhost:3002/sessions", {
+      // .post("https://here-back.herokuapp.com/sessions", {
+        .post("http://localhost:3002/sessions", {
         user: {
               email: values.email,
               password: values.password,
@@ -54,14 +54,7 @@ handleSubmit(e) {
   }
 
 
-    // handleSubmit = e => {
-    //   e.preventDefault();
-    //   this.props.form.validateFields((err, values) => {
-    //     if (!err) {
-    //       console.log('Received values of form: ', values);
-    //     }
-    //   });
-    // };
+  
   
     render() {
       const { getFieldDecorator } = this.props.form;

@@ -22,7 +22,7 @@ export default function AutoGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Paper className={classes.paper}>
           
             <List/>

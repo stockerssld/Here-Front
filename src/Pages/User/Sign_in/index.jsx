@@ -30,7 +30,8 @@ import Sign_inF from '../Sign_in/Form';
                 {/* eslint-disable-next-line */}
                 <Row>
                     <Col span={12} offset={6}>
-                        <Sign_inF />
+                        <Sign_inF
+                         handleSuccessfulAuth={this.handleSuccessfulAuth}  />
                     </Col>
                 </Row>
                 

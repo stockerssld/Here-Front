@@ -33,19 +33,19 @@ export default class Routes extends Component{
 
 
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
-    // this.handleLogoutClick = this.handleLogoutClick.bind(this)
+    
   }
 
   handleSuccessfulAuth(data){
     this.props.handleLogin(data)
     this.props.history.push("/")
+  }
 
-}
 
   checkLoginStatus(){
-    axios.get("https://cors-anywhere.herokuapp.com/http://192.168.0.103:3002/logged_in", { withCredentials: true })
+    axios.get("http://localhost:3002/logged_in", { withCredentials: true })
     .then(response => {
-      // console.log("Logged in?", response)
+      console.log("Logged in?", response)
       if(response.data.logged_in && this.state.loggedInStatus==="NOT_LOGGED_IN"){
         this.setState({
           loggedInStatus: "LOGGED_IN",
@@ -57,8 +57,12 @@ export default class Routes extends Component{
           user: {}
         })
       }
-    }).catch(error=>{
-      console.log("check login error", error)
+    }) .catch(function(error){
+      if(error.response){
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      }
     })
   }
 
@@ -97,7 +101,6 @@ export default class Routes extends Component{
                 render={props=> (
                     <Products {...props} 
                     handleLogin={this.handleLogin}
-                    loggedInStatus = {this.state.loggedInStatus}
                     handleLogout={this.handleLogout}
                     />
                 )}/>
@@ -108,7 +111,6 @@ export default class Routes extends Component{
                   
                     <Sign_in {...props} 
                       handleLogin={this.handleLogin}
-                      loggedInStatus = {this.state.loggedInStatus}
                       handleSuccessfulAuth={this.handleSuccessfulAuth}
                       // handleLogout={this.handleLogout}
                       />
@@ -122,7 +124,6 @@ export default class Routes extends Component{
                   render={props=> (
                       <Sign_up {...props} 
                         handleLogin={this.handleLogin}
-                        loggedInStatus = {this.state.loggedInStatus}
                         handleSuccessfulAuth={this.handleSuccessfulAuth}
                         // handleLogout={this.handleLogout}
                         />
