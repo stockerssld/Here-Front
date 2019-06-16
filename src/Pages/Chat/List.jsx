@@ -1,5 +1,6 @@
 
 import React from 'react'
+import {Card} from 'antd'
 import Personas from './utils'
 export default function List (){
   return(<>
@@ -8,8 +9,8 @@ export default function List (){
   }
 
 {Personas.Personas.map((tipo, index) => {
-  return (<>        Hola
-  </>)
+  return (<Card>        {tipo.nombre}<br/>
+  </Card>)
 })} 
   </>)
 }
