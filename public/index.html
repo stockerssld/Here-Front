@@ -23,11 +23,43 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Cac-Shop</title>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js"></script>-->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/beepjs/0.0.1/beep.min.js"></script>  -->
+
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <!-- <script>
+      $(document).ready(function() {
+        // Open WebSocket connection
+        var url="192.168.0.103:3000"
+        var ws = new WebSocket("ws://" + url + "/chat");
+        // Append each message
+        ws.onmessage = function(e) { $('#chat').append(e.data + "\n") };
+
+        $("form").bind('submit', function(e) {
+          var message = $('#msg').val();
+          ws.send(message);
+          $('#msg').val(''); $('#msg').focus();
+          e.preventDefault();
+        });
+        window.onbeforeunload = function() {
+          websocket.onclose = function () {}; // disable onclose handler first
+          websocket.close()
+        };
+      });
+    </script> -->
+    <script>
+      
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+    
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

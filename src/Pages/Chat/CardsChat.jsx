@@ -1,43 +1,144 @@
-import React from 'react'
-import { Card,Input,Button } from 'antd';
-import Personas from './utils'
+// import React from 'react'
+// import { Card,Input,Button } from 'antd';
+// import Personas from './utils'
 
-const { TextArea } = Input;
-export default  function(props){
+// const { TextArea } = Input;
+// export default  function(props){
  
-    return(
-        <>
-            <Card
-                hoverable
-                cover={
-                <div style={{width:'100%',height:400}} 
-            >
+//     return(
+//        <>
+       
+//        </>,
+
+//         <>
+
+//             <Card
+//                 hoverable
                
+               
+//             >
+//                 <div style={{width:'100%',height:400,'overflow-y':'scroll', background:'#eaeaff'}}
+                
+//                 >
+//     <Card>
+//     <pre id='chat'/>
+//     </Card>
+                   
+//                     </div>                
 
-               {Personas.Personas.map((tipo, index) => {
-                return (<>                   
-                    <Textos/>
-                </>)
-                })} 
-    
+                
+//             {/* <Input placeholder="input search text" onSend={value => console.log(value)} enterButton /> */}
+//             {/* <form> */}
+//             {/* <TextArea rows={20} /> */}
+//             <form>
+//             <input id='msg' placeholder='message...' />
+//             <input type="submit" value="Send"/>
+//             </form>
+//             {/* <Button type="primary">Enviar</Button> */}
+//             {/* </form> */}
+//             </Card>
+//             {console.log(props)}
+//         </>
+//     )
+// }
 
-               <br/>
-                </div>
-            }
-            >
-            {/* <Input placeholder="input search text" onSend={value => console.log(value)} enterButton /> */}
-            <TextArea rows={2} />
-            <Button type="primary" block>Enviar</Button>
-            </Card>
-            {console.log(props)}
-        </>
-    )
+// function Textos(props){
+//     return(
+//         <div>
+        
+        
+//         </div>
+//     )
+// }
+
+import React, { Component } from 'react'
+import randomColor from 'randomcolor'
+import { Form, Icon, Input, Button, Checkbox } from 'antd';
+
+// import  './beep.js'
+function random(min, max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
 }
+export default class CardsChat extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: '',
+            messages: []
+        };
+    }
+    
+    componentDidMount(){
+        var self = this;
+        this.sendable = true;
+        var url="192.168.0.103:3000"
+        var server = new WebSocket("ws://" + url);
+        // let user = localStorage.getItem('user') || `${prompt("What is your name, sir?").replace(/\:|\@/g, "")}`;
+        let user = localStorage.getItem('user') || `${prompt("What is your name, sir?").replace(/\:|\@/g, "")}@${randomColor({luminosity: 'dark'})}@${random(1000, 2000)}`;
 
-function Textos(props){
-    return(
-        <div>
-        {/* {console.log(props.Personas} */}
-        </div>
-    )
+        localStorage.setItem('user', user);
+        server.onmessage = function(event) {
+          const messages = JSON.parse(event.data);
+          self.setState({messages: messages});
+          window.scrollTo(0, document.body.scrollHeight);
+          self.refs.message.focus();
+        //   new Beep(random(18000, 22050)).play(
+        //     messages[messages.length - 1].split(":")[0].split('@')[2],
+        //     0.05,
+        //     [Beep.utils.amplify(8000)]
+        //   );
+        };
+    
+        server.onopen = function() {
+          server.send(`${user}: joined the room.`);
+        };
+    
+        server.onclose = function() {
+          server.send(`${user}: left the room.`);
+        };
+    
+        this.server = server;
+        this.user = user;
+        this.refs.message.focus();
+    }
+
+    
+    sendMessage=() =>{
+        if (!this.sendable) {
+          return false;
+        }
+        var self = this;
+        setTimeout(function () {
+          self.sendable = true; 
+        }, 100);
+        this.server.send(this.user + ":" + this.refs.message.value);
+        this.refs.message.value = '';
+        this.sendable = false;
+    }
+
+    sendMessageWithEnte=(e)=> {
+        if (e.keyCode == 13) {
+         this.sendMessage(); 
+        }
+      }
+    render() {
+        return (
+            <div>
+                 <Form onSubmit={this.sendMessage} className="login-form">
+                <div id="Send">
+                    <ul id="messages"></ul>
+                    <input type="text" ref="message" />
+                    <Button type="primary" htmlType="submit" className="login-form-button">
+                        Enviar
+                    </Button>
+                </div>
+                </Form>
+      {/* ("div", null,
+      React.createElement("ul", null, messages),
+      React.createElement("input", { autofocus: true, placeholder: "write your message!", type: "text", ref: "message", onKeyUp: this.sendMessageWithEnter }),
+      React.createElement("button", { type: "button", onClick: this.sendMessage }, "Send") */}
+    );
+            </div>
+        )
+    }
 }
