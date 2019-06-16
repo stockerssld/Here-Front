@@ -6,7 +6,9 @@ import Header from './Header'
 function Layout(props) {
     return(
         <div>
-            <Header/>    
+            <Header
+                {...props}
+            />    
             <Body ruta={props.match.path}>            
             {props.children}
             </Body>

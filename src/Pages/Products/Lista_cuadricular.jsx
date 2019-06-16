@@ -49,8 +49,10 @@ export default function Lista_cuadricular(props) {
                             </IconButton>
                                 }
                                 />
+                                
                         </GridListTile>
                     ))}
+                    {props.children}
                 </GridList>
                 
             </div>

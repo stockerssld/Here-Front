@@ -4,9 +4,13 @@ import './App.css';
 import Navbar from './components/Navbar/registered';
 import Products from './Pages/Products';
 import Routes from './routes';
-
+import reducers from './reducers'
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 function App() {
   return (
+    <Provider store={createStoreWithMiddleware(reducers)}>
     <div className="App">
       <Routes/>
       <header className="App-header">
@@ -26,6 +30,7 @@ function App() {
       </header>
       
     </div>
+    </Provider>
   );
 }
 
