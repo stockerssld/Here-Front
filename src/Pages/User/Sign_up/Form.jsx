@@ -46,7 +46,7 @@ class Form_Sign_up extends React.Component {
                 password_confirmation: values.password_confirmation
             }
         },
-          { withCredentials:false}
+          { withCredentials:true}
         )
         .then(response =>{
             console.log(response.data.status)

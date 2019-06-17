@@ -131,12 +131,12 @@ export default function Navbar_unregistered() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <Link to='users/Sign_up'>
+        <Link to='/users/Sign_up'>
           <p>Registrate</p>
         </Link>
       </MenuItem>
       <MenuItem>
-        <Link to='users/Sign_in'>
+        <Link to='/users/Sign_in'>
           <p>Iniciar Sesión</p>
         </Link>
       </MenuItem>
