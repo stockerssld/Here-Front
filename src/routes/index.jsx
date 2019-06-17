@@ -6,7 +6,7 @@ import Sign_in from '../Pages/User/Sign_in';
 import Sign_up from '../Pages/User/Sign_up';
 import Chat from './../Pages/Chat'
 import axios from 'axios'
-
+import Seguimiento_Product from './../Pages/Seguimiento_Products'
 function NoMatch({ location }) {
     return (
       <div className="jumbotron align-items-center">
@@ -46,8 +46,8 @@ export default class Routes extends Component{
   checkLoginStatus(){
         
 
-    axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: true })
-    // axios.get("http://localhost:3002/logged_in", { withCredentials: true })
+    // axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: true })
+    axios.get("http://localhost:3002/logged_in", { withCredentials: true })
 
     .then(response => {
       console.log("Logged in?", response)
@@ -125,12 +125,22 @@ export default class Routes extends Component{
                         // handleLogout={this.handleLogout}
                         />
                   )}/>
+
                 <Route
-                path={"/Chat"}
-                render={props=>(
-                  <Chat {...props}/>
-                )}
-                  />
+                  path={"/Chat"}
+                  render={props=>(
+                    <Chat {...props}/>
+                  )}
+                />
+                <Route
+                  path={"/Payment_types"}
+                  render={ props=>(
+                    <Seguimiento_Product {...props}/>
+                  )
+
+                  }
+                />
+
                 <Route render={props=>(
                   
                     <NoMatch {...props}

@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
+// import 'zent/css/index.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'sweetalert2/src/sweetalert2.scss'
 ReactDOM.render(<App />, document.getElementById('root'));

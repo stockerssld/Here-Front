@@ -35,15 +35,16 @@ export default class Modals extends React.Component {
         onOk={this.handleOk}
         onCancel={this.handleCancel}
       >
-        <h1>{this.props.nombre_planta}</h1>
-        <h1>${this.props.precio}</h1>
+        <center>
+          <h1>{this.props.nombre_planta}</h1>
+        </center>
+        
         <center>
           <img src={this.props.img} style={{ width: "18rem" }} />
         </center>
-        <p>
-
-        </p>
-        <p>Some contents...</p>
+        <br/>
+        <h4>Precio: ${this.props.precio}</h4>
+        <p>{this.props.descripcion}</p>
       </Modal>
     </div>
     )
