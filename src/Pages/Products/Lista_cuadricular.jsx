@@ -42,7 +42,7 @@ export default function Lista_cuadricular(props) {
                                 <img src={tile.img} alt={tile.title}/>
                             <GridListTileBar
                                 title={tile.title}
-                                subtitle={<span>by: {tile.author}</span>}
+                                subtitle={<span>by: {tile.nombre_planta}</span>}
                                 actionIcon={
                             <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
                                 <InfoIcon />
@@ -68,7 +68,7 @@ export default function Lista_cuadricular(props) {
                                 <img src={tile.img} alt={tile.title}/>
                             <GridListTileBar
                                 title={tile.title}
-                                subtitle={<span>by: {tile.author}</span>}
+                                subtitle={<span>by: {tile.nombre_planta}</span>}
                                 actionIcon={
                             <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
                                 <InfoIcon />
@@ -91,7 +91,7 @@ export default function Lista_cuadricular(props) {
                                 <img src={tile.img} alt={tile.title}/>
                             <GridListTileBar
                                 title={tile.title}
-                                subtitle={<span>by: {tile.author}</span>}
+                                subtitle={<span>by: {tile.nombre_planta}</span>}
                                 actionIcon={
                             <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
                                 <InfoIcon />

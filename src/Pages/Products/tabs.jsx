@@ -39,7 +39,7 @@ export default function TabsMenu() {
             </Grid>
           </div>
         </TabPane>
-        {/* <TabPane tab="Catacias" key="2">
+        <TabPane tab="Catacias" key="2">
           <div className={classes.root}>
 
             <Grid container spacing={3}>
@@ -64,7 +64,7 @@ export default function TabsMenu() {
               })}
             </Grid>
           </div>
-        </TabPane> */}
+        </TabPane>
       </Tabs>
     </>
   )
