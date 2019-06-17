@@ -32,6 +32,28 @@
 
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <!-- <script>
+      
+      $(document).ready(function() {
+        // Open WebSocket connection
+        var url="192.168.0.103:3000"
+        var ws = new WebSocket("ws://" + url + "/chat");
+        var user = localStorage.getItem('user') || prompt("What is your name, sir?").replace(/\:|\@/g, "") + "@" + randomColor({luminosity: 'dark'}) + "@" + random(1000, 2000);
+        // Append each message
+        ws.onmessage = function(e) { $('#chat').append(e.data + "\n") };
+
+        $("form").bind('submit', function(e) {
+          var message = $('#msg').val();
+          ws.send(message);
+          $('#msg').val(''); $('#msg').focus();
+          e.preventDefault();
+        });
+        window.onbeforeunload = function() {
+          websocket.onclose = function () {}; // disable onclose handler first
+          websocket.close()
+        };
+      });
+    </script> -->
+    <!-- <script>
       $(document).ready(function() {
         // Open WebSocket connection
         var url="192.168.0.103:3000"
@@ -51,9 +73,7 @@
         };
       });
     </script> -->
-    <script>
-      
-    </script>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

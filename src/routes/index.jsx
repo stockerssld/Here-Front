@@ -46,8 +46,8 @@ export default class Routes extends Component{
   checkLoginStatus(){
         
 
-    // axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: true })
-    axios.get("http://localhost:3002/logged_in", { withCredentials: true })
+    axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: false })
+    // axios.get("http://localhost:3002/logged_in", { withCredentials: false })
 
     .then(response => {
       console.log("Logged in?", response)

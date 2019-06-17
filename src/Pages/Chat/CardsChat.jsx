@@ -136,15 +136,21 @@ export default class CardsChat extends Component {
     var server = new WebSocket("ws://" + url);
     // let user = localStorage.getItem('user') || `${prompt("What is your name, sir?").replace(/\:|\@/g, "")}`;
     let user = localStorage.getItem('user') || `${prompt("What is your name, sir?").replace(/\:|\@/g, "")}@${randomColor({ luminosity: 'dark' })}@${random(1000, 2000)}`;
+    
 
     localStorage.setItem('user', user);
     server.onmessage = function (event) {
-      const messages = JSON.parse(event.data);
+    const messages = JSON.parse(event.data);
+      
+      
+      
+      // this.setState({ message, message });
       self.setState({ messages: messages });
+      
       window.scrollTo(0, document.body.scrollHeight);
-      self.refs.message.focus();
+      // self.refs.message.focus();
 
-    };
+    }
 
     server.onopen = function () {
       server.send(`${user}: joined the room.`);
@@ -179,8 +185,11 @@ export default class CardsChat extends Component {
     }
   }
   render() {
+    const {messages}=this.state
+
     return (
       <div>
+        {console.log(messages)}
         {
           // console.log(Personas.Personas[this.props.match.url.substring(6)].mensajes)
         }
@@ -188,7 +197,7 @@ export default class CardsChat extends Component {
         <Form onSubmit={this.sendMessage} className="login-form">
           <div id="Send">
             <ul id="messages" style={{ 'overflow-y': 'scroll' }} >
-            <Container>
+            {/* <Container>
               {Personas.Personas[this.props.match.url.substring(6)].mensajes.map((Info) => {
                 return (<>
                   <div class={!Info.visto ? "alert alert-warning" : Info.ID!=1?"alert alert-primary" :"alert  alert-dark"} role="alert" style={{"text-align": "none"}}>
@@ -202,8 +211,27 @@ export default class CardsChat extends Component {
                   </div>
                 </>)
               })}
-            </Container>
+            </Container> */}
+
+
+
+
+
+
             </ul>
+            {/* {console.log(messages)} */}
+
+            {/* {
+              messages.match((message, index)=>{
+                return(
+                  <>
+                  {index}
+                  </>
+                )
+              })
+            } */}
+            {/* <br/> */}
+            {/* {this.state.message} */}
             <input type="text" ref="message" />
             <Button type="primary" htmlType="submit" className="login-form-button">
               Enviar
@@ -211,7 +239,17 @@ export default class CardsChat extends Component {
           </div>
         </Form>
         
+        {console.log(Pru)}
       </div>
     )
   }
 }
+
+const Mens=[
+  ["josre@#618702@1665: joined the room."],
+  ["josre@#618702@1665: joined the room."],
+  ["josre@#618702@1665: joined the room."]
+]
+const Pru=[
+   ["josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room."]
+]
