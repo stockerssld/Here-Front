@@ -101,7 +101,11 @@ export default class Routes extends Component{
                 {/* <Route path={`${match.url}/:id`} component={Categories} /> */}
                 {/* <Route path="/" exact component={Home}/> */}
                 <Route  exact path={"/"} render={props=> ( <Products {...props}  handleLogin={this.handleLogin}         handleLogout={this.handleLogout}/>)}/>
-
+                {/* <Route path={`${match.url}/:id`} 
+                render={props=>(
+                  <Products {...props}  handleLogin={this.handleLogin}         handleLogout={this.handleLogout}/>
+                )}
+                /> */}
                 <Route
                 path={"/users/Sign_in"}
                 render={props=> (

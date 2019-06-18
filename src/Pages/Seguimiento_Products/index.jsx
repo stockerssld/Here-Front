@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import { Steps, Button, message } from 'antd';
+import { Steps, Button, message,Icon } from 'antd';
 import Tus_Productos from './Tus_Productos';
 import Verificacion_Datos from './Verificacion_Datos';
 import Seguimiento_Producto from './Seguimiento_Producto';
@@ -15,10 +15,13 @@ const steps = [
   {
     title: 'Verificación de Datos',
     content: <Verificacion_Datos/>,
+    status: 'error'
+
   },
   {
     title: 'Seguimiento de Producto',
     content: <Seguimiento_Producto/>,
+    icon: <Icon type="loading" />
   },{
     title: 'Compra realizada',
     content: <Compra_Realizada/>,
@@ -49,8 +52,11 @@ export default class Seguimiento_Products extends Component {
         return (
           <div >
             <Steps current={current}>
+ 
+            {/* {Info.ID==1 ? <div style={{textAlign:"right", paddingRight:"2%"}}> {Info.mensaje}<img src={Personas.admin[0].img} style={{paddingLeft:"2%"}}/></div>: null}     */}
               {steps.map(item => (
-                <Step key={item.title} title={item.title} />
+                
+                <Step key={item.title} title={item.title} icon={item.icon} status={item.status}/>
               ))}
             </Steps>
             <div className="steps-content">{steps[current].content}</div>
@@ -61,7 +67,7 @@ export default class Seguimiento_Products extends Component {
                 </Button>
               )}
               {current < steps.length - 1 && (
-                <Button type="primary" onClick={() => this.next()}>
+                <Button type="primary" style={{ marginLeft: 8 }} onClick={() => this.next()}>
                   Next
                 </Button>
               )}

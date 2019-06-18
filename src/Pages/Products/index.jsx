@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import TabsMenu from './tabs';
+import Slider_Product from './Slider';
 class Products extends Component{
   constructor(props){
     super(props)
@@ -10,7 +11,9 @@ class Products extends Component{
     return(
       <div>
         
-      <TabsMenu/>
+        <Slider_Product/>
+      <br/>
+      <TabsMenu />
       {/* eslint-disable-next-line */}
       </div>
     )

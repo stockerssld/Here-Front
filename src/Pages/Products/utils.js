@@ -119,6 +119,23 @@ export default{
             descripcion:'Esta es una descripcion de ejemplo'
         }
         
+    ],
+    Slider_cons : [
+        {
+            img:'https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/57503852_414126989413391_9038858223183986688_n.jpg?_nc_cat=101&_nc_ht=scontent.fmex10-2.fna&oh=28deaed7a4e7b91f4ac0a36abd55e4d5&oe=5D80F283'
+        },
+        {
+            img:'https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/62573471_309046673336201_2526710791877427200_n.jpg?_nc_cat=103&_nc_ht=scontent.fmex10-2.fna&oh=80e7e9f1e52ec09d4b8f48815ed63460&oe=5D8F3AB1'
+        },{
+            img:'https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/62531395_670403466741175_1113422593056047104_n.jpg?_nc_cat=109&_nc_ht=scontent.fmex10-2.fna&oh=cb0df4f7aee22ce7685285b4f380d051&oe=5D8D01BB'
+        },{
+            img:'https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/62481084_1287000481457763_1036272404755644416_n.jpg?_nc_cat=110&_nc_ht=scontent.fmex10-2.fna&oh=77ae60f236d42f66e7ff3ddc95a145e7&oe=5D88D60E'
+        },{
+            img:'https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/62465502_2050934608535247_2423906875587166208_n.jpg?_nc_cat=101&_nc_ht=scontent.fmex10-2.fna&oh=d7befce75f8dd22acb687ecdcf1ac090&oe=5D93CE06'
+        },
+        {
+            img:'https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/60155650_591901924664259_316155703754489856_n.jpg?_nc_cat=100&_nc_ht=scontent.fmex10-2.fna&oh=e57f58fe2488e38afd4dc9652423751e&oe=5D99B679'
+        }
     ]
     
 }
