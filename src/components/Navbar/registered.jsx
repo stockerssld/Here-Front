@@ -119,9 +119,21 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Cerrar Sesión</MenuItem>
+      
+        <Link to="/Profile" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters ">
+        <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>    Perfil
+        </MenuItem>
+        </Link>
+        <Link to="/My_Account" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters ">
+      <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>
+          Mi Cuenta
+      </MenuItem>
+      </Link>
+        <Link to="/logout" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters ">
+        <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>
+          Cerrar Sesión
+          </MenuItem>
+        </Link>
 
 
 
@@ -182,7 +194,10 @@ export default function Navbar() {
             <ExitIcon />
           </Badge>
         </IconButton>
+
+
         <p>Cerrar Sesión</p>
+
       </MenuItem>
     </Menu>
   );
@@ -200,7 +215,9 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Cac-Shop
+            <Link to="/" className="MuiButtonBase-root ">
+              Cac-Shop
+            </Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
