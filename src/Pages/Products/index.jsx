@@ -23,17 +23,14 @@ class Products extends Component {
 
               <Image.Container size={280}>
                 <Column.Group breakpoint="mobile">
-                  <Column size={2.5}>        
-                    <Image src="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/64317299_2070381379925556_8042930649557893120_n.png?_nc_cat=104&_nc_eui2=AeGIHCoQxg2upnxFv2xPt-ai-M_YnLVDXpZo-KNqOizRl4pqSkmHU0MJeXFhZtwOTQScDNJmd0akems_H8k8eJrKPSor-a9rHHyOXmxhtuWhRA&_nc_ht=scontent.fmex10-2.fna&oh=0a7c2c7bd43fba0a2244efcedfb2e0c3&oe=5D8CFE4B" alt="Imagen Logotipo" style={{ width: "80px", height: "60px" }} />
-                  </Column>
-                  <Column >
-                  <Image src="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/64324760_2566114173477411_8477176547835379712_n.png?_nc_cat=103&_nc_eui2=AeFTQ5K1K876ptfShTorRiz-0SLhf0AEKWEJ9EnRaLCiusKhQ6sTU1kjKlSUvsdIZM2aLL0BRUAd7_uXry2w9jcrLkkxuHD-OEicQ9TqqNV3ug&_nc_ht=scontent.fmex10-2.fna&oh=580f736d50b9351a93035cd959a5ec99&oe=5DC05713" alt="Imagen Logotipo" style={{ width: "300px", height: "60px" }} />
+                  <Column size={10}>        
+                    <Image src="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/64782061_379499039338141_7469943980336087040_n.png?_nc_cat=107&_nc_ht=scontent.fmex10-2.fna&oh=2e0af3118bf26726b71a6bd1e1b8abac&oe=5D89F5C9" alt="Imagen Logotipo" style={{ width: "26s0px", height: "60px" }} />
                   </Column>  
                 </Column.Group>
               </Image.Container>
             </Column>
             <Column>
-              <Search placeholder="Buscar" onSearch={value => console.log(value)} enterButton />
+              <Search placeholder="Buscar" onSearch={value => console.log(value)} enterButton style={{'paddingTop':'1rem'}}/>
             </Column>
           </Column.Group>
         </Container>
