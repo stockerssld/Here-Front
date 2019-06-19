@@ -29,14 +29,14 @@ export default class Header extends Component{
     return(
         <div>
                
-                {
+                {/* {
                     this.props.loggedInStatus==="LOGGED_IN"?
                     <Navbar /> :
                     <Navbar_unregistered/>
 
-                }
+                } */}
             {/* {console.log(this.props.loggedInStatus==="LOGGED_IN")} */}
-            {/* <Navbar/>  */}
+            <Navbar/> 
 
         </div>
     )}
