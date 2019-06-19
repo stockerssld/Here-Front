@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Slider from "react-slick";
 import styled, { keyframes } from "styled-components";
 import Slider_PRo from './utils'
+import {Image}from 'rbx'
 
 const Img = styled.img`
     :hover{
@@ -9,6 +10,7 @@ const Img = styled.img`
         filter: grayscale(25%);
     }
 `
+
 
 export default class Slider_Product extends Component {
     render() {
@@ -23,13 +25,17 @@ export default class Slider_Product extends Component {
         };
 
         return (
-            <Slider {...settings} styled={{ height: "auto" }}>
+            <Slider {...settings} >
 
                 {Slider_PRo.Slider_cons.map((tipo, index) => {
-                    return (<>
-                        <div><img src={tipo.img} alt="" style={{ width: "1500px", height: "500px" }} />
-                        </div>
-                    </>)
+                    return (
+                    <Image.Container size={128}>
+                    <center>
+                    <Image src={tipo.img} alt="Imagenes Carrusel Slider"  style={{ width: "620px", height: "350px" }} />
+                    </center>
+                    </Image.Container>
+                     
+                    )
                 })}
 
             </Slider>
