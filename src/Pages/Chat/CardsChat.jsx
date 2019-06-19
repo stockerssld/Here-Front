@@ -197,7 +197,7 @@ export default class CardsChat extends Component {
         <Form onSubmit={this.sendMessage} className="login-form">
           <div id="Send">
             <ul id="messages" style={{ 'overflow-y': 'scroll' }} >
-            {/* <Container>
+            <Container>
               {Personas.Personas[this.props.match.url.substring(6)].mensajes.map((Info) => {
                 return (<>
                   <div class={!Info.visto ? "alert alert-warning" : Info.ID!=1?"alert alert-primary" :"alert  alert-dark"} role="alert" style={{"text-align": "none"}}>
@@ -211,7 +211,7 @@ export default class CardsChat extends Component {
                   </div>
                 </>)
               })}
-            </Container> */}
+            </Container>
 
 
 

@@ -26,11 +26,12 @@ export default class Slider_Product extends Component {
 
         return (
             <Slider {...settings} >
-
+                
                 {Slider_PRo.Slider_cons.map((tipo, index) => {
                     return (
-                    <Image.Container size={128}>
+                    <Image.Container size={280}>
                     <center>
+                        <br/>
                     <Image src={tipo.img} alt="Imagenes Carrusel Slider"  style={{ width: "620px", height: "350px" }} />
                     </center>
                     </Image.Container>
