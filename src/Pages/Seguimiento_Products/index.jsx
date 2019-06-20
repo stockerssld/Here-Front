@@ -51,6 +51,7 @@ export default class Seguimiento_Products extends Component {
         const { current } = this.state;
         return (
           <div >
+            <br/>
             <Steps current={current}>
  
             {/* {Info.ID==1 ? <div style={{textAlign:"right", paddingRight:"2%"}}> {Info.mensaje}<img src={Personas.admin[0].img} style={{paddingLeft:"2%"}}/></div>: null}     */}

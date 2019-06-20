@@ -12,12 +12,11 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 function App() {
   return (
     <Provider store={createStoreWithMiddleware(reducers)}>
-    <div className="App">
     
       
-      <Routes/>
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <Routes />
+      {/* <header className="App-header">
+         <img src={logo} className="App-logo" alt="logo" /> 
         <img src="http://ecapacitacion.org/oldsite/wp-content/uploads/2014/08/sello_ces_sitio-1.png" className="App-logo" alt="logo" />
         
         <p>
@@ -33,8 +32,8 @@ function App() {
           
         </a>
       </header>
-      
-    </div>
+       */}
+    
     </Provider>
   );
 }

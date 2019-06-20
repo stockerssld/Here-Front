@@ -145,7 +145,7 @@ export default function Navbar_unregistered() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static"  style={{ background: '#006400' }}>
+      <AppBar position="static" >
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             <Link to="/" className="MuiButtonBase-root ">

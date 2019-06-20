@@ -204,7 +204,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" style={{ background: '#006400' }}>
+      <AppBar position="static"  >
         <Toolbar>
           <IconButton
             edge="start"
@@ -236,16 +236,16 @@ export default function Navbar() {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Link to="/Payment_types" style={{ color: '#FFF' }}>
-              <IconButton aria-label="Show 4 new mails" color="inherit">
-                <Badge badgeContent={4} color="secondary">
+              <IconButton aria-label="Show 0 new products" color="inherit">
+                <Badge badgeContent={0} color="secondary">
                   <AddShoppingCarticon />
                 </Badge>
               </IconButton>
             </Link>
 
             <Link to="/Chat" style={{ color: '#FFF' }}>
-              <IconButton aria-label="Show 4 new mails" color="inherit">
-                <Badge badgeContent={4} color="secondary">
+              <IconButton aria-label="Show 2 new mails" color="inherit">
+                <Badge badgeContent={2} color="secondary">
                   <MailIcon />
                 </Badge>
               </IconButton>
