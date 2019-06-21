@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Content, Column, Image } from 'rbx'
+import {  Column, Image } from 'rbx'
 import TabsMenu from './tabs';
 import Slider_Product from './Slider';
 import { Container } from '@material-ui/core';
@@ -16,7 +16,7 @@ class Products extends Component {
     return (
       <div>
         <br />
-        <Container>
+        {/* <Container>
 
           <Column.Group breakpoint="mobile">
             <Column size="one-third">
@@ -33,7 +33,7 @@ class Products extends Component {
               <Search placeholder="Buscar" onSearch={value => console.log(value)} enterButton style={{'paddingTop':'1rem'}}/>
             </Column>
           </Column.Group>
-        </Container>
+        </Container> */}
 
         <Container fluid style={{ background: 'rgb(224, 217, 215)', 'padding-bottom': '1rem' }}>
           <Slider_Product />

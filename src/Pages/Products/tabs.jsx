@@ -29,7 +29,7 @@ export default function TabsMenu() {
         <TabPane tab="Arboles" key="1">
           <div className={classes.root}>
 
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
 
               {Categorias.Tipo1.map((tipo, index) => {
                 return (<>        <Grid item xs={6} sm={3}>

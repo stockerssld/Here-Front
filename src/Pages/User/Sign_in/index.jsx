@@ -21,7 +21,9 @@ import Sign_inF from '../Sign_in/Form';
         return (
             <div>
                 <Typography variant="h5" component="h3">
-                Iniciar Sesión
+                    <center>
+                        Iniciar Sesión
+                    </center>
                 </Typography>
                 <br/>
                 {/* eslint-disable-next-line */}

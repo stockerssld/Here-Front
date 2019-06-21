@@ -10,20 +10,24 @@ const { Step } = Steps;
 const steps = [
   {
     title: 'Selección de Productos',
+     // eslint-disable-next-line
     content:<Tus_Productos/>,
   },
   {
     title: 'Verificación de Datos',
+     // eslint-disable-next-line
     content: <Verificacion_Datos/>,
     status: 'error'
 
   },
   {
     title: 'Seguimiento de Producto',
+     // eslint-disable-next-line
     content: <Seguimiento_Producto/>,
     icon: <Icon type="loading" />
   },{
     title: 'Compra realizada',
+     // eslint-disable-next-line
     content: <Compra_Realizada/>,
   },
 ];

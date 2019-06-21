@@ -110,16 +110,16 @@
 
 
 import React, { Component } from 'react'
-import randomColor from 'randomcolor'
+// import randomColor from 'randomcolor'
 import { Form, Button } from 'antd';
 import Personas from './utils'
 
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 
-function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+// function random(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
 export default class CardsChat extends Component {
   constructor(props) {
     super(props);
@@ -129,61 +129,6 @@ export default class CardsChat extends Component {
     };
   }
 
-  componentDidMount() {
-    var self = this;
-    this.sendable = true;
-    var url = "192.168.0.103:3000"
-    var server = new WebSocket("ws://" + url);
-    // let user = localStorage.getItem('user') || `${prompt("What is your name, sir?").replace(/\:|\@/g, "")}`;
-    let user = localStorage.getItem('user') || `${prompt("What is your name, sir?").replace(/\:|\@/g, "")}@${randomColor({ luminosity: 'dark' })}@${random(1000, 2000)}`;
-    
-
-    localStorage.setItem('user', user);
-    server.onmessage = function (event) {
-    const messages = JSON.parse(event.data);
-      
-      
-      
-      // this.setState({ message, message });
-      self.setState({ messages: messages });
-      
-      window.scrollTo(0, document.body.scrollHeight);
-      // self.refs.message.focus();
-
-    }
-
-    server.onopen = function () {
-      server.send(`${user}: joined the room.`);
-    };
-
-    server.onclose = function () {
-      server.send(`${user}: left the room.`);
-    };
-
-    this.server = server;
-    this.user = user;
-    this.refs.message.focus();
-  }
-
-
-  sendMessage = () => {
-    if (!this.sendable) {
-      return false;
-    }
-    var self = this;
-    setTimeout(function () {
-      self.sendable = true;
-    }, 100);
-    this.server.send(this.user + ":" + this.refs.message.value);
-    this.refs.message.value = '';
-    this.sendable = false;
-  }
-
-  sendMessageWithEnte = (e) => {
-    if (e.keyCode == 13) {
-      this.sendMessage();
-    }
-  }
   render() {
     const {messages}=this.state
 
@@ -200,11 +145,12 @@ export default class CardsChat extends Component {
             <Container>
               {Personas.Personas[this.props.match.url.substring(6)].mensajes.map((Info) => {
                 return (<>
+                  {/* eslint-disable-next-line */}
                   <div class={!Info.visto ? "alert alert-warning" : Info.ID!=1?"alert alert-primary" :"alert  alert-dark"} role="alert" style={{"text-align": "none"}}>
                     
-                    
+                     {/* eslint-disable-next-line */}
                     {Info.ID!=1 ?<div style={{textAlign:"left", paddingLeft:"2%"}}> <img src={Personas.Personas[this.props.match.url.substring(6)].avatar} style={{paddingRight:"2%"}}/>{Info.mensaje}</div>: null}  
-                    
+                     {/* eslint-disable-next-line */}
                   {Info.ID==1 ? <div style={{textAlign:"right", paddingRight:"2%"}}> {Info.mensaje}<img src={Personas.admin[0].img} style={{paddingLeft:"2%"}}/></div>: null}
                   {console.log(Personas.Personas[this.props.match.url.substring(6)].avatar)}
 
@@ -219,19 +165,7 @@ export default class CardsChat extends Component {
 
 
             </ul>
-            {/* {console.log(messages)} */}
 
-            {/* {
-              messages.match((message, index)=>{
-                return(
-                  <>
-                  {index}
-                  </>
-                )
-              })
-            } */}
-            {/* <br/> */}
-            {/* {this.state.message} */}
             <input type="text" ref="message" />
             <Button type="primary" htmlType="submit" className="login-form-button">
               Enviar
@@ -245,11 +179,6 @@ export default class CardsChat extends Component {
   }
 }
 
-const Mens=[
-  ["josre@#618702@1665: joined the room."],
-  ["josre@#618702@1665: joined the room."],
-  ["josre@#618702@1665: joined the room."]
-]
 const Pru=[
    ["josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room."]
 ]
