@@ -40,6 +40,7 @@ export default function Tabs_Verificacion() {
                  <Column.Group breakpoint="mobile">
             <Column size="one-third">
             <br/>                        <br/>
+            {/* eslint-disable-next-line */}
                 		<img src="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/53343611_1660151477616925_7435987200094765056_n.png?_nc_cat=100&_nc_ht=scontent.fmex10-2.fna&oh=fbb9979cc389a8a95c455881d5db4f4a&oe=5D8EA771"/>
                         <br/>
 										<p>Important: You will be redirected to PayPal's website to securely complete your payment.</p>

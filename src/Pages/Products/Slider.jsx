@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
 import Slider from "react-slick";
-import styled, { keyframes } from "styled-components";
 import Slider_PRo from './utils'
 import {Image}from 'rbx'
-
-const Img = styled.img`
-    :hover{
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(25%);
-    }
-`
 
 
 export default class Slider_Product extends Component {

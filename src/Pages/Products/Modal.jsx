@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Button, InputNumber } from 'antd';
+import { Modal, Button } from 'antd';
 import { Column, Title } from 'rbx'
 import { Input } from 'reactstrap'
 import { Link } from 'react-router-dom'

@@ -108,7 +108,7 @@ export default class Routes extends Component{
                 <Route
                 path={"/users/Sign_in"}
                 render={props=> (
-                  
+                  // eslint-disable-next-line
                     <Sign_in {...props} 
                       handleLogin={this.handleLogin}
                       handleSuccessfulAuth={this.handleSuccessfulAuth}
@@ -122,6 +122,7 @@ export default class Routes extends Component{
                 <Route
                   path={"/users/Sign_up"}
                   render={props=> (
+                    // eslint-disable-next-line
                       <Sign_up {...props} 
                         handleLogin={this.handleLogin}
                         handleSuccessfulAuth={this.handleSuccessfulAuth}
@@ -138,6 +139,7 @@ export default class Routes extends Component{
                 <Route
                   path={"/Payment_types"}
                   render={ props=>(
+                    // eslint-disable-next-line
                     <Seguimiento_Product {...props}/>
                   )
 
@@ -145,7 +147,7 @@ export default class Routes extends Component{
                 />
 
                 <Route render={props=>(
-                  
+                  // eslint-disable-next-line
                     <NoMatch {...props}
                      loggedInStatus = {this.state.loggedInStatus}/>
                   

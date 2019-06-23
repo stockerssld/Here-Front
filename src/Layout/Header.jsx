@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from '../components/Navbar/registered';
-import axios from 'axios'
+// import axios from 'axios'
 import Navbar_unregistered from '../components/Navbar';
 export default class Header extends Component{
     // constructor(props){
@@ -31,7 +31,8 @@ export default class Header extends Component{
                
                 {
                     this.props.loggedInStatus==="LOGGED_IN"?
-                    <Navbar {...props}/> :
+                    <Navbar /> :
+                    // eslint-disable-next-line 
                     <Navbar_unregistered/>
 
                 }

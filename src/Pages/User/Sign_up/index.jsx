@@ -36,6 +36,7 @@ render(){
             {/* eslint-disable-next-line */}
             <Row>
                 <Col span={12} offset={6}>
+                {/* eslint-disable-next-line  */}
                     <Sign_upF handleSuccessfulAuth={this.handleSuccessfulAuth} />
                 </Col>
             </Row>
