@@ -91,13 +91,15 @@ handleSubmit(e) {
             })(<Checkbox>Remember me</Checkbox>)}
 
             <br/>
-            <a className="login-form-forgot" href="">
+            <center>
+              <a className="login-form-forgot" href="">
               Forgot password
             </a>
             <br/>
             <Button type="primary" htmlType="submit" className="login-form-button">
               Iniciar Sesión
             </Button>
+            </center>
           </Form.Item>
         </Form>
         

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography';
 import { Row, Col } from 'antd';
 import Sign_inF from '../Sign_in/Form';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import { Container } from '@material-ui/core';
 
 
 
@@ -18,9 +21,15 @@ import Sign_inF from '../Sign_in/Form';
     }
     
     render(){
+        
+
         return (
-            <div>
-                <Typography variant="h5" component="h3">
+            <>
+            <br/    >
+            <Container>
+            <Paper style={{  padding:(3, 2)}}>
+            <div style={{paddingTop:'2%'}}>
+                <Typography variant="h4" component="h3">
                     <center>
                         Iniciar Sesión
                     </center>
@@ -35,6 +44,9 @@ import Sign_inF from '../Sign_in/Form';
                 </Row>
                 
             </div>
+            </Paper>
+            </Container>
+            </>
         );
     }
 }

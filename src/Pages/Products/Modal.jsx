@@ -60,7 +60,8 @@ export default class Modals extends React.Component {
 
           <Column.Group >
             <Column size={4}>
-              <Button type="danger" block  >
+              
+              <Button type="danger" block  onClick={this.handleCancel}>
                 Cancelar
               </Button>
             </Column>

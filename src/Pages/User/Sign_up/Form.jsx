@@ -108,9 +108,11 @@ class Form_Sign_up extends React.Component {
               )}
           </Form.Item>
           <Form.Item>
+            <center>
             <Button type="primary" htmlType="submit" className="login-form-button" >
               Registrar
             </Button>
+            </center>
           </Form.Item>
         </Form>
         

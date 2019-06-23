@@ -147,7 +147,7 @@ export default function Navbar_unregistered() {
       <AppBar position="static" >
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            <Link to="/" className="MuiButtonBase-root ">
+            <Link to="/" style={{textDecoration: 'none', color: 'white', font: 'oblique bold 120% cursive'  }}>
               Cac-Shop
             {/* <img src="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/64317299_2070381379925556_8042930649557893120_n.png?_nc_cat=104&_nc_ht=scontent.fmex10-2.fna&oh=cd852427d2e7fcde3713b1be3d697c9d&oe=5D8CFE4B" width="60"  />
             <img src="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.15752-9/64324760_2566114173477411_8477176547835379712_n.png?_nc_cat=103&_nc_ht=scontent.fmex10-2.fna&oh=0342ede9e28895a67df3f92bdd2c32f9&oe=5D98CA13" width="260"  /> */}
@@ -169,13 +169,13 @@ export default function Navbar_unregistered() {
          
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <Link to="/users/Sign_up" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button">
+          <Link to="/users/Sign_up" style={{textDecoration: 'none', color: 'white'}}>
             <MenuItem onClick={handleMenuClose}>
                 Registrate
             </MenuItem>
           </Link>
 
-          <Link to="/users/Sign_in"  className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button">
+          <Link to="/users/Sign_in" style={{textDecoration: 'none', color: 'white'}}>
             <MenuItem onClick={handleMenuClose}>
               Iniciar Sesión
             </MenuItem>

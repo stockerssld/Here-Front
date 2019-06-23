@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography';
 import Sign_upF from './Form';
 import { Row, Col } from 'antd';
+import Paper from '@material-ui/core/Paper';
+import { Container } from '@material-ui/core';
 
 
 
@@ -20,12 +22,17 @@ import { Row, Col } from 'antd';
 render(){
     return (
         
+        <>
+        <br/>
+        <Container>
+        <Paper  style={{ padding:(3,2)}}>
+        
         <div style={{paddingTop:'2%'}}>
-        {/* <Paper className={classes.root} style={{'background-color':'#efefed'}}> */}
-            <Typography variant="h5" component="h3">
-            Registrate
-            </Typography>
-            <br/>
+        <Typography variant="h4" component="h3">
+                    <center>
+                     Registrate
+                    </center>
+        </Typography>    <br/>
             {/* eslint-disable-next-line */}
             <Row>
                 <Col span={12} offset={6}>
@@ -33,8 +40,10 @@ render(){
                 </Col>
             </Row>
             
-        {/* </Paper> */}
         </div>
+        </Paper>
+        </Container>
+        </>
     );
 }
 }
