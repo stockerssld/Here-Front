@@ -44,11 +44,10 @@ export default class Routes extends Component{
 
 
   checkLoginStatus(){
-        
+      
+    axios.get("http://localhost:3002/logged_in", { withCredentials: true })
 
-    axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: true })
-    // axios.get("http://localhost:3002/logged_in", { withCredentials: true })
-
+    // axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: true })
     .then(response => {
       console.log("Logged in?", response)
       if(response.data.logged_in && this.state.loggedInStatus==="NOT_LOGGED_IN"){
@@ -56,7 +55,7 @@ export default class Routes extends Component{
           loggedInStatus: "LOGGED_IN",
           user: response.data.user
         })
-      } else if(!response.data.logged_in && this.state.loggedInStatus==="LOGGED_IN"){
+      } else if(!response.data.logged_in & this.state.loggedInStatus==="LOGGED_IN"){
         this.setState({
           loggedInStatus: "NOT_LOGGED_IN",
           user: {}

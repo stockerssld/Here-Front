@@ -31,10 +31,11 @@ export default class Header extends Component{
                
                 {
                     this.props.loggedInStatus==="LOGGED_IN"?
-                    <Navbar /> :
+                    <Navbar {...props}/> :
                     <Navbar_unregistered/>
 
                 }
+                {/* {console.log(this.props.handleLogout)} */}
             {/* {console.log(this.props.loggedInStatus==="LOGGED_IN")} */}
             {/* <Navbar/>  */}
 

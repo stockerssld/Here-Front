@@ -83,7 +83,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar(props) {
+  
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -103,6 +104,7 @@ export default function Navbar() {
     setAnchorEl(null);
     handleMobileMenuClose();
   }
+  
 
   function handleMobileMenuOpen(event) {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -129,7 +131,9 @@ export default function Navbar() {
           Mi Cuenta
       </MenuItem>
       </Link>
-        <Link to="/logout" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters ">
+
+
+        <Link to="/" >
         <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>
           Cerrar Sesión
           </MenuItem>
@@ -206,16 +210,9 @@ export default function Navbar() {
     <div className={classes.grow}>
       <AppBar position="static"  >
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
+         
           <Typography className={classes.title} variant="h6" noWrap>
-            <Link to="/" className="MuiButtonBase-root ">
+            <Link to="/" style={{textDecoration: 'none', color: 'white', font: 'oblique bold 120% cursive'  }}>
               Cac-Shop
             </Link>
           </Typography>
