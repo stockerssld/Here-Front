@@ -4,6 +4,7 @@ import TabsMenu from './tabs';
 import Slider_Product from './Slider';
 import { Container } from '@material-ui/core';
 import { Input } from 'antd';
+import Paper from '@material-ui/core/Paper';
 
 const Search = Input.Search;
 
@@ -35,12 +36,18 @@ class Products extends Component {
           </Column.Group>
         </Container> */}
 
+       
+        {/* eslint-disable-next-line */}
+
+        <Container>
         <Container fluid style={{ background: 'rgb(224, 217, 215)', 'padding-bottom': '1rem' }}>
-          <Slider_Product />
+        <Slider_Product />
         </Container>
         <br />
+        <Paper style={{  padding:(3, 4)}}>
         <TabsMenu />
-        {/* eslint-disable-next-line */}
+        </Paper>
+        </Container>
       </div>
     )
   }
