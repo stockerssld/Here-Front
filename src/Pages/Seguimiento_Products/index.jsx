@@ -57,8 +57,6 @@ export default class Seguimiento_Products extends Component {
           <div >
             <br/>
             <Steps current={current}>
- 
-            {/* {Info.ID==1 ? <div style={{textAlign:"right", paddingRight:"2%"}}> {Info.mensaje}<img src={Personas.admin[0].img} style={{paddingLeft:"2%"}}/></div>: null}     */}
               {steps.map(item => (
                 
                 <Step key={item.title} title={item.title} icon={item.icon} status={item.status}/>
@@ -72,9 +70,12 @@ export default class Seguimiento_Products extends Component {
                 </Button>
               )}
               {current < steps.length - 1 && (
+                <>
+                
                 <Button type="primary" style={{ marginLeft: 8 }} onClick={() => this.next()}>
                   Next
                 </Button>
+                </>
               )}
               
               {current === steps.length - 1 && (

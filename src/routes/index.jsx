@@ -7,6 +7,7 @@ import Sign_up from '../Pages/User/Sign_up';
 import Chat from './../Pages/Chat'
 import axios from 'axios'
 import Seguimiento_Product from './../Pages/Seguimiento_Products'
+import Profile from './../Pages/User/Profile'
 function NoMatch({ location }) {
     return (
       <div className="jumbotron align-items-center">
@@ -26,7 +27,12 @@ export default class Routes extends Component{
 
     this.state={
       loggedInStatus: "NOT_LOGGED_IN",
-      user:{}
+      user:{},
+      name: "",
+      last_name: "",
+      cellphone: "",
+      address: "",
+      user_id:""
     }
     
     this.handleLogin = this.handleLogin.bind(this)
@@ -34,7 +40,7 @@ export default class Routes extends Component{
 
 
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
-    
+    this.checkDAta = this.checkDAta.bind(this)
   }
 
   handleSuccessfulAuth(data){
@@ -50,6 +56,7 @@ export default class Routes extends Component{
     // axios.get("https://here-back.herokuapp.com/logged_in", { withCredentials: true })
     .then(response => {
       console.log("Logged in?", response)
+      // console.log(response.data.user.id)
       if(response.data.logged_in && this.state.loggedInStatus==="NOT_LOGGED_IN"){
         this.setState({
           loggedInStatus: "LOGGED_IN",
@@ -72,6 +79,28 @@ export default class Routes extends Component{
 
   componentDidMount(){
     this.checkLoginStatus()
+    this.checkDAta()
+  }
+
+  checkDAta(){
+    
+    axios.get(`http://localhost:3002/profiles/2`)
+    
+    .then(response => {
+        
+        // console.log(response.data)
+        this.setState({
+            name: response.data.name,
+            last_name: response.data.last_name,
+            cellphone: response.data.cellphone,
+            address: response.data.address,
+            user_id: response.data.user_id
+        })
+        // console.log(response.data[1])
+
+    }).catch(error => {
+        console.log(error)
+    })
   }
 
   handleLogout(){
@@ -89,12 +118,16 @@ export default class Routes extends Component{
   }
 
     render(){
+        {console.log(this.state.user_id)}
+      // {console.log(this.state.user.id)}
+
       return(
         <BrowserRouter>
         <Layout 
           
           handleLogin={this.handleLogin}
           loggedInStatus = {this.state.loggedInStatus}
+          
           handleLogout={this.handleLogout}>
             <Switch>
                 {/* <Route path={`${match.url}/:id`} component={Categories} /> */}
@@ -129,7 +162,12 @@ export default class Routes extends Component{
                         // handleLogout={this.handleLogout}
                         />
                   )}/>
-
+                <Route
+                  path={"/Profile"}
+                  render={props=>(
+                    <Profile users= {this.state.user}/>
+                  )}
+                />
                 <Route
                   path={"/Chat"}
                   render={props=>(
@@ -140,7 +178,8 @@ export default class Routes extends Component{
                   path={"/Payment_types"}
                   render={ props=>(
                     // eslint-disable-next-line
-                    <Seguimiento_Product {...props}/>
+                    <Seguimiento_Product {...props}
+                    handleLogout={this.handleLogout}/>
                   )
 
                   }

@@ -28,7 +28,7 @@ export default class Header extends Component{
     render(props){
     return(
         <div>
-               
+             {/* {console.log(this.props)}   */}
                 {
                     this.props.loggedInStatus==="LOGGED_IN"?
                     <Navbar /> :

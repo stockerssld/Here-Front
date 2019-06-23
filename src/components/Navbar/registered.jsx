@@ -16,7 +16,6 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import AddShoppingCarticon from '@material-ui/icons/AddShoppingCartTwoTone'
 import MoreIcon from '@material-ui/icons/MoreVert';
 
-import ExitIcon from '@material-ui/icons/ExitToApp'
 
 
 import { Link } from "react-router-dom";
@@ -43,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    width: '100%',
+    width: '100%',  
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
       width: 'auto',
@@ -83,7 +82,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Navbar(props) {
+export default function Navbar() {
     
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -122,18 +121,18 @@ export default function Navbar(props) {
       onClose={handleMenuClose}
     >
       
-        <Link to="/Profile" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters ">
-        <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>    Perfil
+        <Link to="/Profile">
+        <MenuItem onClick={handleMenuClose}  style={{textDecoration: 'none', color: 'black',width:'10rem'}}>    Perfil
         </MenuItem>
         </Link>
-        <Link to="/My_Account" className="MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters ">
+        <Link to="/My_Account" style={{textDecoration: 'none', color: 'black',width:'10rem'}}>
       <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>
           Mi Cuenta
       </MenuItem>
       </Link>
 
 
-        <Link to="/" >
+        <Link to="/"  style={{textDecoration: 'none', color: 'black',width:'10rem'}}>
         <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>
           Cerrar Sesión
           </MenuItem>
@@ -187,22 +186,7 @@ export default function Navbar(props) {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
-      </MenuItem>
-      <hr />
-
-
-
-      <MenuItem>
-        <IconButton aria-label="Show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <ExitIcon />
-          </Badge>
-        </IconButton>
-
-
-        <p>Cerrar Sesión</p>
-
-      </MenuItem>
+      </MenuItem>      
     </Menu>
   );
 
