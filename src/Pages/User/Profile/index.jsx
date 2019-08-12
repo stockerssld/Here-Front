@@ -7,40 +7,42 @@ import Typography from '@material-ui/core/Typography';
 import thunk from 'redux-thunk';
 
 export default class Profile extends Component {
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         name: "",
-    //         last_name: "",
-    //         cellphone: "",
-    //         address: "",
-    //         user: ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            name: "",
+            last_name: "",
+            cellphone: "",
+            address: "",
+            user: ""
 
-    //     }
-    // }
+        }
+    }
     
-    // componentDidMount() {
-    //     axios.get("http://localhost:3002/profiles/1")
-    //         .then(response => {
+    componentDidMount() {
+        axios.get("http://localhost:3002/profiles/1")
+            .then(response => {
                 
-    //             // console.log(response.data)
-    //             this.setState({
-    //                 name: response.data.name,
-    //                 last_name: response.data.last_name,
-    //                 cellphone: response.data.cellphone,
-    //                 address: response.data.address,
-    //                 user: response.data.user_id
-    //             })
-    //             // console.log(response.data[1])
+                // console.log(response.data)
+                this.setState({
+                    name: response.data.name,
+                    last_name: response.data.last_name,
+                    cellphone: response.data.cellphone,
+                    address: response.data.address,
+                    user: response.data.user_id
+                })
+                // console.log(response.data[1])
 
-    //         }).catch(error => {
-    //             console.log(error)
-    //         })
-    // }
+            }).catch(error => {
+                console.log(error)
+            })
+    }
     render() {
-        // const { name, last_name, address, cellphone, user } = this.state
+        const { name, last_name, address, cellphone, user } = this.state
         // console.log(this.props.users.id)
-        // console.log(this.props.users)
+        this.state.user=this.props.users.id
+        // console.log(this.props.users.id)
+        // console.log(this.state.user)
         return (
             <Container>
               
@@ -66,10 +68,10 @@ export default class Profile extends Component {
                             {/* <b>Nombre: </b> {name} <br/>
                             <b>Apellidos: </b> {last_name} <br/>
                             <b>Dirección: </b> {address} <br/>
-                            <b>Telefono: </b> {cellphone} <br/>
-                            <b>usuario: </b> {user} <br/>    */}
+                            <b>Telefono: </b> {cellphone} <br/>*/}
+                            <b>usuario: </b> {user} <br/>    
                     </Typography>
-                    {console.log(this.props)}
+                    {/* {console.log(this.props)} */}
                     
                     </Card>
                     </Column>

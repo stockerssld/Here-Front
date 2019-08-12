@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar({handleLogoutClick}) {
     
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -97,6 +97,10 @@ export default function Navbar() {
 
   function handleMobileMenuClose() {
     setMobileMoreAnchorEl(null);
+  }
+
+  function handleMenuClosed(){
+    handleLogoutClick()
   }
 
   function handleMenuClose() {
@@ -133,7 +137,7 @@ export default function Navbar() {
 
 
         <Link to="/"  style={{textDecoration: 'none', color: 'black',width:'10rem'}}>
-        <MenuItem onClick={handleMenuClose} style={{width:'10rem'}}>
+        <MenuItem onClick={handleMenuClosed} style={{width:'10rem'}}>
           Cerrar Sesión
           </MenuItem>
         </Link>

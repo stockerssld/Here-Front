@@ -1,29 +1,24 @@
 import React, { Component } from 'react'
 import Navbar from '../components/Navbar/registered';
-// import axios from 'axios'
+import axios from 'axios'
 import Navbar_unregistered from '../components/Navbar';
 export default class Header extends Component{
-    // constructor(props){
-    //     super(props)
-    //     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this)
-    //     this.handleLogoutClick = this.handleLogoutClick.bind(this)
-    // }
+    constructor(props) {
+        super(props)
 
-    // handleSuccessfulAuth(data){
-    //     this.props.handleLogin(data)
-    //     this.props.history.push("/")
+        this.handleLogoutClick = this.handleLogoutClick.bind(this)
+    }
 
-    // }
+    handleLogoutClick() {
+        // console.log(this.props.handleLogout())
+        axios.delete("http://localhost:3002/logout", { withCredentials: true }).then(response => {
+            this.props.handleLogout()
+        }).catch(error => {
+            console.log("logout error", error)
+        })
 
-    // handleLogoutClick(){
-    //     axios.delete("http://localhost:3000/logout",{withCredentials: true}).then(response=>{
-    //         this.props.handleLogout()
-    //     }).catch(error => {
-    //         console.log("logout error", error)
-    //     })
-
-    //     this.props.handleLogout()
-    // }
+        // this.props.handleLogout()
+    }
     
     render(props){
     return(
@@ -31,7 +26,7 @@ export default class Header extends Component{
              {/* {console.log(this.props)}   */}
                 {
                     this.props.loggedInStatus==="LOGGED_IN"?
-                    <Navbar /> :
+                    <Navbar  handleLogoutClick={() => this.handleLogoutClick()}/> :
                     // eslint-disable-next-line 
                     <Navbar_unregistered/>
 

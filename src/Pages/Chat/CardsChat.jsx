@@ -141,7 +141,7 @@ export default class CardsChat extends Component {
         {/* {console.log(this.props.match.url.substring(6))} */}
         <Form onSubmit={this.sendMessage} className="login-form">
           <div id="Send">
-            <ul id="messages" style={{ 'overflow-y': 'scroll' }} >
+            <ul id="messages">
             <Container>
               {Personas.Personas[this.props.match.url.substring(6)].mensajes.map((Info) => {
                 return (<>
@@ -173,12 +173,12 @@ export default class CardsChat extends Component {
           </div>
         </Form>
         
-        {console.log(Pru)}
+        {/* {console.log(Pru)} */}
       </div>
     )
   }
 }
 
-const Pru=[
-   ["josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room."]
-]
+// const Pru=[
+//    ["josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room.", "josre@#618702@1665: joined the room."]
+// ]
