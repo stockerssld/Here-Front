@@ -103,6 +103,12 @@ const [user, SetUser] = useState({})
       >
         <Switch>
           
+        <Route
+                  path={"/Chat"}
+                  render={props=>(
+                    <Chat {...props}/>
+                  )}
+                />
           <Route path={"/admin/orders"} render={props => (<Admin><Orders /></Admin>)} />
           <Route path={"/admin/return"} render={props => (<Admin><Returns /></Admin>)} />
           <Route path={"/admin/category/new"} render={props => (<Admin><Category><New /> </Category></Admin>)} />
